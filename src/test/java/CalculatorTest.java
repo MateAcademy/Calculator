@@ -34,11 +34,11 @@ public class CalculatorTest {
 
     @Test(expected = MyException.class)
     public void test5() {
-        Integer rez  = Calculator.count('$', 2, 2);
+        Calculator.count('$', 2, 2);
     }
 
     @Test(expected = NullPointerException.class)
     public void test6() {
-        Integer rez  = Calculator.count('-', null, 2);
+        Calculator.count('-', null, 2);
     }
 }
