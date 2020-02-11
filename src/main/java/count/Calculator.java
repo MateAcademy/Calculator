@@ -23,7 +23,7 @@ public class Calculator {
         calculator.put('^', power);
     }
 
-    public static Double count(Character operation, Double b, Double c) {
+    public Double count(Character operation, Double b, Double c) {
         Optional<Count> rezult = Optional.ofNullable(calculator.get(operation));
         return rezult.orElseThrow(NoCorrectMathOperationException::new).run(b, c);
     }
