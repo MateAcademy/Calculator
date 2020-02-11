@@ -1,8 +1,6 @@
 import count.Calculator;
 import count.NoCorrectMathOperationException;
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -11,7 +9,6 @@ import org.junit.Test;
 public class CalculatorTest {
 
     Calculator calculator = new Calculator();
-
 
     @Test
     public void testSum() {
