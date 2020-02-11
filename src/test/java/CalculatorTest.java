@@ -55,7 +55,7 @@ public class CalculatorTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Test()
+    @Test
     public void testNegativeDegree() {
         Double actualResult = calculator.count('^', 3.0, -2.0);
         Double expectedResult = 0.1111111111111111;
@@ -69,7 +69,7 @@ public class CalculatorTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
-    @Test()
+    @Test
     public void testDivisionByZero() {
         Double actualResult = calculator.count('/', 2.0, 0.0);
         Double expectedResult = Double.POSITIVE_INFINITY;
