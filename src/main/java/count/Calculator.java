@@ -27,10 +27,4 @@ public class Calculator {
         Optional<Count> rezult = Optional.ofNullable(calculator.get(operation));
         return rezult.orElseThrow(NoCorrectMathOperationException::new).run(b, c);
     }
-
-
-    public static void main(String[] args) {
-        System.out.println(count('^', 3., -2.));
-        System.out.println(Math.pow(3 , -2));
-    }
 }
