@@ -48,7 +48,7 @@ public class CalculatorTest {
         calculator.count('-', null, 2.0);
     }
 
-    @Test()
+    @Test
     public void testPower() {
         Double actualResult = calculator.count('^', 3.0, 2.0);
         Double expectedResult = 9.0;
