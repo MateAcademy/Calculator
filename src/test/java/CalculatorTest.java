@@ -66,4 +66,11 @@ public class CalculatorTest {
         Double actualResult = 4.0;
         Assert.assertEquals(rez, actualResult);
     }
+
+    @Test()
+    public void testDivisionByZero() {
+        Double expectedResult = Double.POSITIVE_INFINITY;
+        Double actualResult = Calculator.count('/', 2.0, 0.0);
+        Assert.assertEquals(expectedResult, actualResult);
+    }
 }
