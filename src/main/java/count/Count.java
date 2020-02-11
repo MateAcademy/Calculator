@@ -5,5 +5,5 @@ package count;
  */
 @FunctionalInterface
 public interface Count {
-    int run(Integer a, Integer b);
+    Double run(Double a, Double b);
 }

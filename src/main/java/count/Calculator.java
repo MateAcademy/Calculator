@@ -10,7 +10,7 @@ public class Calculator {
 
     private static HashMap<Character, Count> calculator = new HashMap<>();
 
-    private static void initializer() {
+     static {
         Count sum = (a, b) -> a + b;
         calculator.put('+', sum);
         Count sum2 = (a, b) -> a - b;
@@ -19,12 +19,18 @@ public class Calculator {
         calculator.put('*', multiply);
         Count divizion = (a, b) -> a / b;
         calculator.put('/', divizion);
+        Count power = (a, b) -> Math.pow(a , b);
+        calculator.put('^', power);
     }
 
-    public static Integer count(Character a, Integer b, Integer c) {
-        initializer();
-        Optional<Count> rez = Optional.ofNullable(calculator.get(a));
-        return rez.orElseThrow(MyException::new).run(b, c);
+    public static Double count(Character operation, Double b, Double c) {
+        Optional<Count> rezult = Optional.ofNullable(calculator.get(operation));
+        return rezult.orElseThrow(NoCorrectMathOperationException::new).run(b, c);
     }
 
+
+    public static void main(String[] args) {
+        System.out.println(count('^', 3., -2.));
+        System.out.println(Math.pow(3 , -2));
+    }
 }
