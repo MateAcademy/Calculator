@@ -28,6 +28,8 @@ public class Сalculator {
 //  static int indexClosedBrackets = 0;
 
     public static String countUp(String stringToCalculate) {
+
+        stringToCalculate = stringToCalculate.replaceAll("[\\s]+]", "");
         myValidString = stringToCalculate;
 
         if (!isValid(stringToCalculate)) {
@@ -103,10 +105,10 @@ public class Сalculator {
             //прохожусь по строке и если открытая скобка, то захожу в подстроку:
             if (chars[i] == Chars.OPEN_BRACKET.getValue()) {
                 StorageBracketsInner.listBrackets = new ArrayList<>();
-    //            String sb= parsedAndValidatedString.substring(i);
+                //            String sb= parsedAndValidatedString.substring(i);
                 CheckBracketsInner.isValidStringCheckBrackets(parsedAndValidatedString);
 
-                if (c.constanta!=0)
+                if (c.constanta != 0)
                     StorageBracketsInner.listBrackets.remove(0);
 
                 c.constanta++;
