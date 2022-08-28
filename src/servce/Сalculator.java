@@ -1,9 +1,12 @@
 package servce;
 
 import data.StorageBrackets;
+import data.StorageBracketsInner;
 import enteties.Brackets;
 import enteties.Chars;
 import enteties.Operations;
+import validator.CheckBrackets;
+import validator.CheckBracketsInner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +20,7 @@ import static validator.CheckStringMatches.isValidStringToCalculate;
  */
 public class Сalculator {
     public static String myValidString;
-
+    public int constanta = 0;
 
     static int amountBrackets = StorageBrackets.positionClosedBrackets.size();  //2
 
@@ -53,12 +56,15 @@ public class Сalculator {
 
 
     private static String calculateParseAndValidString(String parsedAndValidatedString) {
+        Сalculator c = new Сalculator();
+        c.constanta = 0;
         char[] chars = breakIntoCharactersString(parsedAndValidatedString);
 
         List<String> numbers = new ArrayList<>();
         List<Operations> operations = new ArrayList<>();
 
         for (int i = 0; i < chars.length; i++) {
+
             //разбил строку parsedAndValidatedString на цифры и добавил их в numbers:
             if (chars[i] >= Chars.NUMBER_BOTTOM_LIMIT.getValue() && chars[i] <= Chars.NUMBER_TOP_LIMIT.getValue()) {
                 StringBuilder numberBuilder = new StringBuilder().append(chars[i++]);
@@ -96,17 +102,37 @@ public class Сalculator {
 
             //прохожусь по строке и если открытая скобка, то захожу в подстроку:
             if (chars[i] == Chars.OPEN_BRACKET.getValue()) {
+                StorageBracketsInner.listBrackets = new ArrayList<>();
+    //            String sb= parsedAndValidatedString.substring(i);
+                CheckBracketsInner.isValidStringCheckBrackets(parsedAndValidatedString);
+
+                if (c.constanta!=0)
+                    StorageBracketsInner.listBrackets.remove(0);
+
+                c.constanta++;
+
+                //if (i == 0) constanta++;
+//                StorageBrackets.listBrackets = new ArrayList<>();
+//                CheckBrackets.isValidStringCheckBrackets(parsedAndValidatedString);
+//                AppConstant.count++;
+
                 //я должен передать parsedAndValidateData.substring(bracketIndex + 1, closedBracket)
                 Brackets brackets = StorageBrackets.listBrackets.get(0);
                 StorageBrackets.listBrackets.remove(0);
-                AppConstant.count++;
+
                 int openIndexInBrackets = brackets.getOpenPosition();
                 int closedIndexInBrackets = brackets.getClosedPosition();
 
                 String subStringToBrackets = myValidString.substring(openIndexInBrackets + 1, closedIndexInBrackets);
+
+                Brackets bracketsInner = StorageBracketsInner.listBrackets.get(0);
+                StorageBracketsInner.listBrackets.remove(0);
+                i = bracketsInner.getClosedPosition();
+
                 double rez = Double.parseDouble(calculateParseAndValidString(subStringToBrackets));
                 numbers.add(Double.toString(rez));
-                i = closedIndexInBrackets-AppConstant.count;
+//                i = closedIndexInBrackets - constanta;
+//                i = subStringToBrackets.length();
             }
         }
 
@@ -148,11 +174,6 @@ public class Сalculator {
         }
         return numbers.get(0);
     }
-
-//    private static int countStartBrackets() {
-//        int count = 0;
-//        char[] chars =
-//    }
 
 }
 

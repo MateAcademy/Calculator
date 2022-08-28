@@ -19,17 +19,23 @@ public class Main {
         8*(7-(6+8))=-56
         String str = "88*(9+9*(9+8))
         */
+//  59+(3+2) + (3+2) + 1  = 70;
+        //  55+((3+2) +(3+2))
 
-//      String stringToCalculate = "5*(8-3)-(6+7)";     // = 12;
-        String stringToCalculate = "50+(4+(8*1)+(4+1))*2+1";
-//        String stringToCalculate =   "50+(4+1)*(2+6)";   //90
-//        String stringToCalculate =   "((50+(4+1)+(4+1)))";  //60
+//        String stringToCalculate = "50+((4+1)+(4+1))+1";           //61
+//        String stringToCalculate =   "((4+6)*(1+2))";           //30
+//        String stringToCalculate = "5*(8-3)-(6+7)";             //12
+//        String stringToCalculate =   "50+(4+1)*(2+6)";          //90
+//        String stringToCalculate = "((50+(4+1)+(4+1)))";        //60
 
-                             // String stringToCalculate = "((50+((4+1)*(2+6))))";
+//             String stringToCalculate = "50+(4+(8*1)+(4+1))*2+1";       //50+34+1=85
 
-//        String stringToCalculate = "(50+(4+1)*(2+6))";
-//        String stringToCalculate = "((50+(4+1)+(5)))";
-//        String stringToCalculate = "((50+(4+1)+(5)))";
+
+        String stringToCalculate = "50+(5+(4+1))*2+1";           //71
+//        String stringToCalculate = "50+(5+5)*2+1";               //71
+//        String stringToCalculate = "(50+(4+1)*(2+6))";           //90
+//        String stringToCalculate = "((50+(4+1)+(5)))";           //60
+
 
         String rez = Сalculator.countUp(stringToCalculate);
         System.out.println(rez);
