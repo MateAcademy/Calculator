@@ -1,14 +1,14 @@
 
 import handler.ConsoleHandler;
 import servce.Сalculator;
-import validator.CheckBrackets;
-import validator.CheckStringMatches;
+
+
+
 
 /**
  * @author Sergey Klunniy
  */
 public class Main {
-
     public static void main(String[] args) {
        /* >history
         03.05.2001
@@ -17,22 +17,24 @@ public class Main {
         8*(9+9*(9+8))=1296
         05.06.2020
         8*(7-(6+8))=-56
-
         String str = "88*(9+9*(9+8))
         */
 
-        String stringToCalculate = ConsoleHandler.consoleHandler();
+//      String stringToCalculate = "5*(8-3)-(6+7)";     // = 12;
+        String stringToCalculate = "50+(4+(8*1)+(4+1))*2+1";
+//        String stringToCalculate =   "50+(4+1)*(2+6)";   //90
+//        String stringToCalculate =   "((50+(4+1)+(4+1)))";  //60
 
-        boolean isValidStringToCalculateMatches = CheckStringMatches.isValidStringToCalculate(stringToCalculate);
-        if (!isValidStringToCalculateMatches)
-            return;
+                             // String stringToCalculate = "((50+((4+1)*(2+6))))";
 
-        boolean isValidStringCheckBrackets = CheckBrackets.isValidStringCheckBrackets(stringToCalculate);
-        if (!isValidStringCheckBrackets)
-            return;
+//        String stringToCalculate = "(50+(4+1)*(2+6))";
+//        String stringToCalculate = "((50+(4+1)+(5)))";
+//        String stringToCalculate = "((50+(4+1)+(5)))";
 
-        Сalculator.calculate(stringToCalculate);
+        String rez = Сalculator.countUp(stringToCalculate);
+        System.out.println(rez);
     }
+
 }
 
 

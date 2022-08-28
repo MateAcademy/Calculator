@@ -1,33 +1,32 @@
 package validator;
 
+import data.StorageBrackets;
 import enteties.Chars;
-
-import java.util.ArrayList;
-import java.util.List;
+import enteties.StatusBrackets;
 
 /**
  * @author Sergey Klunniy
  */
 public class CheckBrackets {
 
-    private static double rezult;
-    private static List<Integer> pozitionOpenBrackets = new ArrayList<>();
-    private static List<Integer> pozitionClozedBrackets = new ArrayList<>();
-
     public static boolean isValidStringCheckBrackets(String str) {
         char[] chars = str.toCharArray();
         int open = 0;
         int closed = 0;
 
-        for (int i = 0; i < chars.length; i++) {
-            if (chars[i] == Chars.OPEN_BRACKET.getValue()) {
+        for (int index = 0; index < chars.length; index++) {
+
+            if (chars[index] == Chars.OPEN_BRACKET.getValue()) {
                 open++;
-                pozitionOpenBrackets.add(i);
+                StorageBrackets.positionOpenBrackets.add(index);
+                StorageBrackets.addBrackets(index, StatusBrackets.OPEN);
             }
 
-            if (chars[i] == Chars.CLOSED_BRACKET.getValue()) {
+            //проверил что закрывающая скобка идет после открывающей
+            if (chars[index] == Chars.CLOSED_BRACKET.getValue() && (StorageBrackets.positionClosedBrackets.size() < StorageBrackets.positionOpenBrackets.size())) {
                 closed++;
-                pozitionClozedBrackets.add(i);
+                StorageBrackets.positionClosedBrackets.add(index);
+                StorageBrackets.addBrackets(index, StatusBrackets.CLOSED);
             }
         }
 

@@ -10,7 +10,7 @@ public class CheckStringMatches {
         if (check == false) {
             System.out.println(str + "=error");
         }
-        return check;
+        return true;
     }
 
 }
