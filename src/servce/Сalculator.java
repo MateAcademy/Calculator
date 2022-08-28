@@ -24,9 +24,6 @@ public class Сalculator {
 
     static int amountBrackets = StorageBrackets.positionClosedBrackets.size();  //2
 
-//  static int indexOpenBrackets = amountBrackets - 1;
-//  static int indexClosedBrackets = 0;
-
     public static String countUp(String stringToCalculate) {
 
         stringToCalculate = stringToCalculate.replaceAll("[\\s]+]", "");
