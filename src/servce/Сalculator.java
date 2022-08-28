@@ -26,7 +26,7 @@ public class Сalculator {
 
     public static String countUp(String stringToCalculate) {
 
-        stringToCalculate = stringToCalculate.replaceAll("[\\s]+]", "");
+        stringToCalculate = stringToCalculate.replaceAll("[\s]+", "");
         myValidString = stringToCalculate;
 
         if (!isValid(stringToCalculate)) {
@@ -130,8 +130,6 @@ public class Сalculator {
 
                 double rez = Double.parseDouble(calculateParseAndValidString(subStringToBrackets));
                 numbers.add(Double.toString(rez));
-//                i = closedIndexInBrackets - constanta;
-//                i = subStringToBrackets.length();
             }
         }
 
@@ -168,7 +166,6 @@ public class Сalculator {
                 numbers.set(i, rez.toString());
                 numbers.remove(i + 1);
                 operations.remove(i);
-                //50+5+10
             }
         }
         return numbers.get(0);

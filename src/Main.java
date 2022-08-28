@@ -30,6 +30,7 @@ public class Main {
 
 //      String stringToCalculate = "((50+(4+1)+(5)))";           //6
 
+//      (5 +5)+ ( 7-1)
         String stringToCalculate = ConsoleHandler.getString();
         String result = Сalculator.countUp(stringToCalculate);
         System.out.println(result);
