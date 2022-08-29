@@ -22,7 +22,7 @@ public class Main {
 //  59+(3+2) + (3+2) + 1  = 70;
         //  55+((3+2) +(3+2))
 
-//      String stringToCalculate = "50+((4+1)+(4+1))+1";           //61
+//      String stringToCalculate = "50+((4+1)+(4+1))+1";        //61
 //      String stringToCalculate =   "((4+6)*(1+2))";           //30
 //      String stringToCalculate = "5*(8-3)-(6+7)";             //12
 //      String stringToCalculate =   "50+(4+1)*(2+6)";          //90
