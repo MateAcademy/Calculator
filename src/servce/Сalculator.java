@@ -1,11 +1,18 @@
 package servce;
 
+//import data.StorageBrackets;
+//import data.StorageBracketsInner;
+//import enteties.Brackets;
+//import enteties.Chars;
+//import enteties.Operations;
+//import validator.CheckBrackets;
+//import validator.CheckBracketsInner;
+
 import data.StorageBrackets;
 import data.StorageBracketsInner;
 import enteties.Brackets;
 import enteties.Chars;
 import enteties.Operations;
-import validator.CheckBrackets;
 import validator.CheckBracketsInner;
 
 import java.util.ArrayList;
@@ -14,6 +21,9 @@ import java.util.Stack;
 
 import static validator.CheckBrackets.isValidStringCheckBrackets;
 import static validator.CheckStringMatches.isValidStringToCalculate;
+
+//import static validator.CheckBrackets.isValidStringCheckBrackets;
+//import static validator.CheckStringMatches.isValidStringToCalculate;
 
 /**
  * @author Sergey Klunniy
@@ -26,7 +36,7 @@ public class Сalculator {
 
     public static String countUp(String stringToCalculate) {
 
-        stringToCalculate = stringToCalculate.replaceAll("[\s]+", "");
+        stringToCalculate = stringToCalculate.replaceAll("[\\s]+", "");
         myValidString = stringToCalculate;
 
         if (!isValid(stringToCalculate)) {

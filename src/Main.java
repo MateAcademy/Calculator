@@ -1,5 +1,9 @@
-import handler.ConsoleHandler;
+
+
+import handler.Handler;
 import servce.Сalculator;
+
+import java.util.logging.ConsoleHandler;
 
 /**
  * @author Sergey Klunniy
@@ -31,8 +35,8 @@ public class Main {
 //      String stringToCalculate = "((50+(4+1)+(5)))";           //6
 
 //      (5 +5)+ ( 7-1)
-        String stringToCalculate = ConsoleHandler.getString();
-        String result = Сalculator.countUp(stringToCalculate);
+        String str = Handler.getString();
+        String result = Сalculator.countUp(str);
         System.out.println(result);
     }
 
